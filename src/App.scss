@@ -1,0 +1,20 @@
+@import './scss/variables', './scss/reset'; 
+@font-face {
+    font-family: SpaceMedium;
+    src: url(./assets/fonts/static/SpaceGrotesk-Medium.ttf);
+}
+@font-face {
+    font-family: SpaceBold;
+    src: url(./assets/fonts/static/SpaceGrotesk-Bold.ttf);
+}
+@font-face {
+    font-family: SpaceM;
+    src: url(./assets/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+body {
+    height: 100vh;
+    background-color: $darkPurple;
+    font-family: SpaceM;
+} 
+

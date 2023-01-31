@@ -1,0 +1,21 @@
+@import "../../scss/variables";
+
+    .header{
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .btn{
+            background-color: $purple;
+            color: $white;
+            font-size: 18px;
+            padding: 5px 15px;
+            border-radius: 50px;
+        }
+    }
+
+    .gamearea{
+        display: flex;
+        border: 1px solid red;
+        justify-content: space-between;
+    }
