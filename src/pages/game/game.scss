@@ -1,21 +1,51 @@
 @import "../../scss/variables";
 
-    .header{
-        border: 1px solid red;
+.game{
+    background-color: $purple;
+    height: 100vh;
+    overflow: hidden;
+    header{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .btn{
-            background-color: $purple;
-            color: $white;
-            font-size: 18px;
-            padding: 5px 15px;
-            border-radius: 50px;
+        justify-content: center;
+        .header{
+            display: flex;
+            align-items: center;
+            padding: 10px 0px 10px 0px;
+            width: 500px;
+            justify-content: space-between;
+            margin-left: 30px;
+            img{
+                width: 40px;
+            }
+            .btn{
+                background-color: $darkPurple;
+                color: $white;
+                font-size: 18px;
+                padding: 5px 15px;
+                border-radius: 50px;
+                margin-left: -20px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
     }
 
+    
     .gamearea{
         display: flex;
-        border: 1px solid red;
+        // border: 1px solid red;
         justify-content: space-between;
     }
+
+    .foot{
+        background-color: $darkPurple;
+        height: 200px;
+        width: 100vw;
+        bottom: -12%;
+        border-radius: 70px 70px 0px 0px ;
+        position: fixed;
+    }
+
+}
+

@@ -7,7 +7,7 @@ import Board from "../../components/Board/Board"
 
 const Game = () => {
   return (
-    <div>
+    <div className="game">
       <header>
         <div className="header">
           <div className="menu btn">MENU</div>
@@ -16,11 +16,11 @@ const Game = () => {
         </div>
       </header>
       <div className="gamearea">
-        <Score />
+        <Score num="1" />
         <Board />
-        <Score />
+        <Score num="2" />
       </div>
-      <footer></footer>
+      <div className="foot"></div>
     </div>
   )
 }

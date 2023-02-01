@@ -1,0 +1,50 @@
+.logic{
+    position: absolute;
+    z-index: 2;
+    width: 480px;
+    height: 90%;
+    top: 0;
+    display: flex;
+    padding-right: 5px;
+    padding-left: 5px;
+    .column{
+        width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: rotate(180deg);
+        img{
+            position: relative;
+            width: 51.6px;
+            margin-bottom: 7px;
+            margin-top: 5px;
+            transform: rotate(180deg);
+        }
+        img:last-child{
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.coinAdder{
+    width: 480px;
+    height: 90%;
+    top: 0;
+    position: absolute;
+    z-index: 8;
+    display: flex;
+    padding-right: 5px;
+    padding-left: 5px;
+    .coinAddCol{
+        width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        &:hover{
+            background-color: rgba(0, 255, 255, 0.171);
+        }
+    }
+}

@@ -2,6 +2,11 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import "./index.css"
 import App from "./App"
+import { GameContextProvider } from "./context/GameContext"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<App />)
+root.render(
+  <GameContextProvider>
+    <App />
+  </GameContextProvider>
+)
