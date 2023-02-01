@@ -13,6 +13,7 @@ export const GameContextProvider = ({ children }) => {
   const [twoWinCount, setTwoWinCount] = useState(0)
   const [isTie, setIsTie] = useState(false)
   const [seconds, setSeconds] = useState(30)
+  const [isMenuOpen, setIsMenuOpen] = useState(true)
 
   const coinAdder = (col) => {
     if (column[col].length < 6) {
@@ -136,6 +137,7 @@ export const GameContextProvider = ({ children }) => {
         twoWinCount,
         isTie,
         seconds,
+        isMenuOpen,
         setColumn,
         setOneWinCount,
         setTwoWinCount,
@@ -145,6 +147,7 @@ export const GameContextProvider = ({ children }) => {
         coinAdder,
         setIsTie,
         setSeconds,
+        setIsMenuOpen,
       }}
     >
       {children}

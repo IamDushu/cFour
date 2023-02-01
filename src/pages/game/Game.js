@@ -1,13 +1,16 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import "./game.scss"
 
 import logo from "../../assets/images/logo.svg"
 import Score from "../../components/Score/Score"
 import Board from "../../components/Board/Board"
 import { GameContext } from "../../context/GameContext"
+import Menu from "../../components/Menu/Menu"
 
 const Game = () => {
   const ctx = useContext(GameContext)
+  const navigate = useNavigate()
 
   const restart = () => {
     ctx.setColumn([[], [], [], [], [], [], []])
@@ -20,11 +23,32 @@ const Game = () => {
     ctx.setSeconds(30)
   }
 
+  const quit = () => {
+    menuRestart()
+    navigate("/")
+  }
+
+  const menuRestart = () => {
+    menuClickHandler()
+    restart()
+  }
+
+  const menuClickHandler = () => ctx.setIsMenuOpen((prev) => !prev)
+
   return (
     <div className="game">
       <header>
+        {ctx.isMenuOpen && (
+          <Menu
+            menuClickHandler={menuClickHandler}
+            restart={menuRestart}
+            quit={quit}
+          />
+        )}
         <div className="header">
-          <div className="menu btn">MENU</div>
+          <div className="menu btn" onClick={menuClickHandler}>
+            MENU
+          </div>
           <img src={logo} alt="logo"></img>
           <div className="restart btn" onClick={restart}>
             RESTART
