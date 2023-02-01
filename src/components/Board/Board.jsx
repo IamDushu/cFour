@@ -27,7 +27,7 @@ const Board = () => {
         <img src={boardb} alt='blackboard' className='blackboard'></img>
         <Logic />
         <img src={boardw} alt='whiteboard' className='whiteboard'></img>
-        {isWin ? <Win /> : <Timer />} 
+        {isWin || ctx.isTie ? <Win /> : <Timer />} 
       </div>
     </div>
   )

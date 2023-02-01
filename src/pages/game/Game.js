@@ -16,6 +16,8 @@ const Game = () => {
     ctx.setOneWin(false)
     ctx.setTwoWin(false)
     ctx.setPlayer("one")
+    ctx.setIsTie(false)
+    ctx.setSeconds(30)
   }
 
   return (

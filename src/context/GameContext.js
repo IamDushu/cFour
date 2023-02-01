@@ -11,11 +11,11 @@ export const GameContextProvider = ({ children }) => {
   const [twoWin, setTwoWin] = useState(false)
   const [oneWinCount, setOneWinCount] = useState(0)
   const [twoWinCount, setTwoWinCount] = useState(0)
-  const [isFill, setIsFill] = useState(0)
+  const [isTie, setIsTie] = useState(false)
+  const [seconds, setSeconds] = useState(30)
 
   const coinAdder = (col) => {
     if (column[col].length < 6) {
-      console.log(isFill)
       if (player === "one") {
         setPlayer("two")
         setColumn((prev) => [...prev, prev[col].push(1)])
@@ -23,23 +23,22 @@ export const GameContextProvider = ({ children }) => {
         setPlayer("one")
         setColumn((prev) => [...prev, prev[col].push(2)])
       }
-    } else {
-      setIsFill((prev) => prev + 1)
-      console.log(isFill)
     }
   }
 
   useEffect(() => {
-    console.log(column)
+    setSeconds(30)
     checkVertically(column)
     checkHorizontally(column)
+    checkAntiDiagonal(column)
+    checkDiagonal(column)
+    checkDraw(column)
   }, [column])
 
   const checkVertically = (clm) => {
     clm.forEach((ele) => {
       if (ele.length > 3) {
         if (ele.join("").includes("1111")) {
-          // console.log(ele.indexOf("1"))
           setOneWin(true)
           setOneWinCount((prev) => prev + 1)
         }
@@ -56,9 +55,6 @@ export const GameContextProvider = ({ children }) => {
     const newArr = [[], [], [], [], [], []]
     const num = player === "one" ? "2222" : "1111"
     //i is the row // j is the column ||||
-    console.log(clm)
-    console.log(player)
-    console.log(num)
     for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 7; j++) {
         newArr[i] += clm[j][i]
@@ -77,6 +73,58 @@ export const GameContextProvider = ({ children }) => {
     }
   }
 
+  const checkAntiDiagonal = (boards) => {
+    for (let r = 0; r < 3; r++) {
+      for (let c = 0; c < 4; c++) {
+        if (boards[r][c] !== " ") {
+          if (
+            boards[r][c] === boards[r + 1][c + 1] &&
+            boards[r + 1][c + 1] === boards[r + 2][c + 2] &&
+            boards[r + 2][c + 2] === boards[r + 3][c + 3]
+          ) {
+            if (boards[r][c] === 1) {
+              setOneWin(true)
+              setOneWinCount((prev) => prev + 1)
+            }
+            if (boards[r][c] === 2) {
+              setTwoWin(true)
+              setTwoWinCount((prev) => prev + 1)
+            }
+          }
+        }
+      }
+    }
+  }
+
+  const checkDiagonal = (boards) => {
+    for (let r = 3; r < 6; r++) {
+      for (let c = 0; c < 4; c++) {
+        if (boards[r][c] !== " ") {
+          if (
+            boards[r][c] === boards[r - 1][c + 1] &&
+            boards[r - 1][c + 1] === boards[r - 2][c + 2] &&
+            boards[r - 2][c + 2] === boards[r - 3][c + 3]
+          ) {
+            if (boards[r][c] === 1) {
+              setOneWin(true)
+              setOneWinCount((prev) => prev + 1)
+            }
+            if (boards[r][c] === 2) {
+              setTwoWin(true)
+              setTwoWinCount((prev) => prev + 1)
+            }
+          }
+        }
+      }
+    }
+  }
+
+  const checkDraw = (clm) => {
+    if (clm.flat().length === 84) {
+      setIsTie(true)
+    }
+  }
+
   return (
     <GameContext.Provider
       value={{
@@ -86,7 +134,8 @@ export const GameContextProvider = ({ children }) => {
         twoWin,
         oneWinCount,
         twoWinCount,
-        isFill,
+        isTie,
+        seconds,
         setColumn,
         setOneWinCount,
         setTwoWinCount,
@@ -94,38 +143,11 @@ export const GameContextProvider = ({ children }) => {
         setTwoWin,
         setPlayer,
         coinAdder,
+        setIsTie,
+        setSeconds,
       }}
     >
       {children}
     </GameContext.Provider>
   )
 }
-
-// useEffect(() => {
-//   console.log(column, player)
-//   if (player === "two") {
-//     if (checkVertically(column, "1111")) {
-//       setPlayerOneWin(true)
-//     }
-//   } else {
-//     if (checkVertically(column, "2222")) {
-//       setPlayerTwoWin(true)
-//     }
-//   }
-// }, [column, player])
-
-// const checkVertically = (clm, data) => {
-//   clm.forEach((ele) => {
-//     if (ele.length > 3) {
-//       return ele.join("").includes(data)
-//     }
-//   })
-// }
-
-// // const checkHorizontally = (clm) => {
-// //   console.log("checked Horizontally")
-// // }
-
-// // const checkDiagonal = (clm) => {
-// //   console.log("checked Diagonally")
-// // }
