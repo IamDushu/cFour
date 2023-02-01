@@ -13,8 +13,8 @@ const Timer = () => {
     <div className={player === "one" ? "timer" : "timer yellow"}>
       <img src={player === "one" ? timerRed : timerYellow} alt="timered"></img>
       <div className="info">
-        <p>{player === "one" ? "PLAYER 1's TURN" : "PLAYER 2's TURN"}</p>
-        <h1>15s</h1>
+        <h1>{player === "one" ? "PLAYER 1's TURN" : "PLAYER 2's TURN"}</h1>
+        {/* <h1>15s</h1> */}
       </div>
     </div>
   )

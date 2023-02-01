@@ -16,7 +16,7 @@ const Score = (props) => {
     <div className='score'>
       <img src={player} alt="player"></img>
       <p>PLAYER {props.num}</p>
-      <h1>0</h1>
+      <h1>{props.score}</h1>
     </div>
   )
 }

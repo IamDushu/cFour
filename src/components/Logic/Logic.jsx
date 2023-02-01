@@ -10,6 +10,7 @@ const Logic = () => {
 
   const boards = ctx.column
 
+
   const creator = (num) => {
     if (num === 1) {
       return <img src={coin} alt="redcoin" key={Math.random()} />
@@ -21,38 +22,34 @@ const Logic = () => {
 
   return (
     <>
-    <div className="logic">
-      <div className="column one">
-        {boards[0].map((num) => creator(num))}
+      <div className="logic">
+        <div className="column one">{boards[0].map((num) => creator(num))}</div>
+        <div className="column two">{boards[1].map((num) => creator(num))}</div>
+        <div className="column three">
+          {boards[2].map((num) => creator(num))}
+        </div>
+        <div className="column four">
+          {boards[3].map((num) => creator(num))}
+        </div>
+        <div className="column five">
+          {boards[4].map((num) => creator(num))}
+        </div>
+        <div className="column six">{boards[5].map((num) => creator(num))}</div>
+        <div className="column seven">
+          {boards[6].map((num) => creator(num))}
+        </div>
       </div>
-      <div className="column two">
-        {boards[1].map((num) => creator(num))}
-      </div>
-      <div className="column three">
-        {boards[2].map((num) => creator(num))}
-      </div>
-      <div className="column four">
-        {boards[3].map((num) => creator(num))}
-      </div>
-      <div className="column five">
-        {boards[4].map((num) => creator(num))}
-      </div>
-      <div className="column six">
-        {boards[5].map((num) => creator(num))}
-      </div>
-      <div className="column seven">
-        {boards[6].map((num) => creator(num))}
-      </div>
-    </div>
-    <div className="coinAdder">
-      <div className="coinAddCol" onClick={() => ctx.coinAdder(0)}></div>
-      <div className="coinAddCol" onClick={() => ctx.coinAdder(1)}></div>
-      <div className="coinAddCol" onClick={() => ctx.coinAdder(2)}></div>
-      <div className="coinAddCol" onClick={() => ctx.coinAdder(3)}></div>
-      <div className="coinAddCol" onClick={() => ctx.coinAdder(4)}></div>
-      <div className="coinAddCol" onClick={() => ctx.coinAdder(5)}></div>
-      <div className="coinAddCol" onClick={() => ctx.coinAdder(6)}></div>
-    </div>
+      {!ctx.oneWin && !ctx.twoWin && (
+        <div className="coinAdder">
+          <div className="coinAddCol" onClick={() => ctx.coinAdder(0)}></div>
+          <div className="coinAddCol" onClick={() => ctx.coinAdder(1)}></div>
+          <div className="coinAddCol" onClick={() => ctx.coinAdder(2)}></div>
+          <div className="coinAddCol" onClick={() => ctx.coinAdder(3)}></div>
+          <div className="coinAddCol" onClick={() => ctx.coinAdder(4)}></div>
+          <div className="coinAddCol" onClick={() => ctx.coinAdder(5)}></div>
+          <div className="coinAddCol" onClick={() => ctx.coinAdder(6)}></div>
+        </div>
+      )}
     </>
   )
 }

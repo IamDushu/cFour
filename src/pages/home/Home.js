@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import "./home.scss"
 
 import logo from "../../assets/images/logo.svg"
@@ -9,6 +10,7 @@ import Rules from "../../components/Rules"
 const Home = () => {
   const [openRules, setOpenRules] = useState(false)
   const [gameMode, setGameMode] = useState(null)
+  const navigate = useNavigate()
 
   const openRulesHandler = () => {
     setOpenRules((prev) => !prev)
@@ -16,6 +18,7 @@ const Home = () => {
 
   const gameModeHandler = (mode) => {
     setGameMode((prev) => mode)
+    navigate("/game")
   }
 
   return (
@@ -28,10 +31,7 @@ const Home = () => {
             <img src={logo} alt="logo"></img>
           </div>
           <div className="options">
-            <div
-              className="gameoption cpu"
-              onClick={() => gameModeHandler("cpu")}
-            >
+            <div className="gameoption cpu">
               <h3>PLAY VS CPU</h3>
               <img src={playervscpu} alt="playervscpu"></img>
             </div>
