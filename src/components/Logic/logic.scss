@@ -1,52 +1,109 @@
-.logic{
-    position: absolute;
-    z-index: 2;
-    width: 480px;
-    height: 90%;
-    top: 0;
-    display: flex;
-    padding-right: 5px;
-    padding-left: 5px;
-    .column{
-        width: 70px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+@import "../../scss/mixins";
+
+@include for-screen{
+    .logic{
+        position: absolute;
+        z-index: 2;
+        width: 480px;
+        height: 90%;
+        top: 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: rotate(180deg);
-        img{
-            position: relative;
-            width: 51.6px;
-            margin-bottom: 7px;
-            margin-top: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        .column{
+            width: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             transform: rotate(180deg);
+            img{
+                position: relative;
+                width: 51.6px;
+                margin-bottom: 7px;
+                margin-top: 5px;
+                transform: rotate(180deg);
+            }
+            img:last-child{
+                margin-bottom: 5px;
+            }
         }
-        img:last-child{
-            margin-bottom: 5px;
+    }
+    
+    .coinAdder{
+        width: 480px;
+        height: 90%;
+        top: 0;
+        position: absolute;
+        z-index: 8;
+        display: flex;
+        padding-right: 5px;
+        padding-left: 5px;
+        .coinAddCol{
+            width: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px; 
+            &:hover{
+                background-color: rgba(0, 255, 255, 0.219);
+                // background-color: rgba(0, 0, 0, 0.212);
+                cursor: pointer;
+            }
         }
     }
 }
 
-.coinAdder{
-    width: 480px;
-    height: 90%;
-    top: 0;
-    position: absolute;
-    z-index: 8;
-    display: flex;
-    padding-right: 5px;
-    padding-left: 5px;
-    .coinAddCol{
-        width: 70px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 20px;
-        &:hover{
-            background-color: rgba(0, 255, 255, 0.219);
-            // background-color: rgba(0, 0, 0, 0.212);
-            cursor: pointer;
+@include for-phone{
+    .logic{
+        position: absolute;
+        z-index: 2;
+        width: 90vw;
+        height: 100%;
+        top: 0;
+        display: flex;
+        padding-right: 5px;
+        padding-left: 5px;
+        .column{
+            width: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: rotate(180deg);
+            img{
+                position: relative;
+                width: 85%;
+                margin-bottom: 0.6svw;
+                margin-top: 1.1svw;
+                transform: rotate(180deg);
+            }
+            img:first-child{
+                margin-top: 9svw;
+            }
+        }
+    }
+    
+    .coinAdder{
+        width: 90vw;
+        height: 90%;
+        top: 0;
+        position: absolute;
+        z-index: 8;
+        display: flex;
+        padding-right: 5px;
+        padding-left: 5px;
+        .coinAddCol{
+            width: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px; 
+            // &:hover{
+            //     background-color: rgba(0, 255, 255, 0.219);
+            //     // background-color: rgba(0, 0, 0, 0.212);
+            //     cursor: pointer;
+            // }
         }
     }
 }

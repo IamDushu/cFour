@@ -1,92 +1,203 @@
 @import "../../scss/variables";
+@import "../../scss/mixins";
 
-.home{
-    overflow: hidden;
-    height: 100vh;
-    .rulesModal{
-        background-color: $white;
-        width: 40vw;
-        padding: 20px;
-        border-radius: 30px;
-        border: 2px solid $black;
-        border-bottom: 10px solid $black;
-        height: 60vh;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 15vh;
-        position: relative;
-        h1{
-            text-align: center;
-            font-size: 45px;
-        }
-        h3{
-            color: $purple;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        span{
-            font-weight: bold;
-            margin-right: 6px;
-        }
-        .checkmark{
-            position: absolute;
-            left: 50%;
-            bottom: -11%;
-            transform: translate(-50%);
-            &:hover{
-                cursor: pointer;
+
+@include for-screen{
+    .home{
+        overflow: hidden;
+        height: 100vh;
+        .rulesModal{
+            background-color: $white;
+            width: 40vw;
+            padding: 20px;
+            border-radius: 30px;
+            border: 2px solid $black;
+            border-bottom: 10px solid $black;
+            height: 60vh;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15vh;
+            position: relative;
+            h1{
+                text-align: center;
+                font-size: 45px;
             }
-            img{
-                width: 70px;
-            }
-        }
-    }
-    
-    
-    
-    .mainmenu{
-        border: 2px solid $black;
-        border-bottom: 10px solid $black;
-        background-color: $purple;
-        border-radius: 25px;
-        width: 30vw;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 15vh;
-        text-align: center;
-        padding: 40px;
-    
-        .options{
-            margin-top: 50px;
-            .gameoption{
-                display: flex;
-                justify-content: space-between;
-                border: 2px solid $black;
-                border-bottom: 8px solid $black;
-                border-radius: 20px;
-                padding: 15px 10px;
+            h3{
+                color: $purple;
+                margin-top: 10px;
                 margin-bottom: 10px;
-                &:hover {
+            }
+            span{
+                font-weight: bold;
+                margin-right: 6px;
+            }
+            .checkmark{
+                position: absolute;
+                left: 50%;
+                bottom: -11%;
+                transform: translate(-50%);
+                &:hover{
                     cursor: pointer;
-                    border-color: rgb(127, 255, 212);
                 }
-        
                 img{
-                    width: 50px;
-                }
-        
-                &.cpu{
-                    background-color: $red;
-                    color: $white;
-                }
-                &.player{
-                    background-color: $yellow;
-                }
-                &.rules{
-                    background-color: $white;
+                    width: 70px;
                 }
             }
         }
-     
+        
+        
+        
+        .mainmenu{
+            border: 2px solid $black;
+            border-bottom: 10px solid $black;
+            background-color: $purple;
+            border-radius: 25px;
+            width: 30vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15vh;
+            text-align: center;
+            padding: 40px;
+        
+            .options{
+                margin-top: 50px;
+                .gameoption{
+                    display: flex;
+                    justify-content: space-between;
+                    border: 2px solid $black;
+                    border-bottom: 8px solid $black;
+                    border-radius: 20px;
+                    padding: 15px 10px;
+                    margin-bottom: 10px;
+                    &:hover {
+                        cursor: pointer;
+                        border-color: rgb(127, 255, 212);
+                    }
+            
+                    img{
+                        width: 50px;
+                    }
+            
+                    &.cpu{
+                        background-color: $red;
+                        color: $white;
+                    }
+                    &.player{
+                        background-color: $yellow;
+                    }
+                    &.rules{
+                        background-color: $white;
+                    }
+                }
+            }
+        }
     }
 }
+
+@include for-phone{
+    .home{
+        background-color: $purple;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .rulesModal{
+            background-color: $white;
+            width: 90vw;
+            padding: 20px;
+            padding-bottom: 35px;
+            border-radius: 30px;
+            border: 2px solid $black;
+            border-bottom: 10px solid $black;
+            height: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            h1{
+                text-align: center;
+                font-size: 45px;
+                margin-bottom: 30px;
+            }
+            h3{
+                color: $purple;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 25px;
+            }
+            span{
+                font-weight: bold;
+                margin-right: 6px;
+                font-size: 20px;
+            }
+            p{
+                font-size: 18px;
+            }
+            .checkmark{
+                position: absolute;
+                left: 50%;
+                bottom: -11%;
+                transform: translate(-50%);
+                &:hover{
+                    cursor: pointer;
+                }
+                img{
+                    width: 70px;
+                }
+            }
+        }
+        
+        
+        
+        .mainmenu{
+            background-color: $purple;
+            width: 100vw;
+            height: 100svh;
+            text-align: center;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .options{
+                margin-top: 50px;
+                width: 100vw;
+                padding: 15px;
+                .gameoption{
+                    font-weight: bold;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 2px solid $black;
+                    border-bottom: 12px solid $black;
+                    border-radius: 25px;
+                    padding: 15px 18px;
+                    margin-bottom: 10px;
+                    height: 85px;
+                    font-size: 22px;
+                    &:hover {
+                        cursor: pointer;
+                        border-color: rgb(127, 255, 212);
+                    }
+            
+                    img{
+                        width: 80px;
+                    }
+            
+                    &.cpu{
+                        background-color: $red;
+                        color: $white;
+                    }
+                    &.player{
+                        background-color: $yellow;
+                    }
+                    &.rules{
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

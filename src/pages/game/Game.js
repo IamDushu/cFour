@@ -60,6 +60,13 @@ const Game = () => {
         <Board />
         <Score num="2" score={ctx.twoWinCount} />
       </div>
+      <div className="mobilegame">
+        <div className="scorearea">
+          <Score num="1" score={ctx.oneWinCount} />
+          <Score num="2" score={ctx.twoWinCount} />
+        </div>
+        <Board />
+      </div>
       {ctx.oneWin || ctx.twoWin ? (
         ctx.oneWin ? (
           <div className="foot one"></div>

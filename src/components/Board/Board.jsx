@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Timer from '../Timer/Timer'
 import "./board.scss"
 
@@ -18,11 +18,31 @@ const Board = () => {
   const twoWin = useContext(GameContext).twoWin
   const isWin = oneWin || twoWin
 
+  // const [x, setX] = useState()
+  // const [y, setY] = useState()
+
+  // useEffect(
+  //   () => {
+  //     const update = (e) => {
+  //       setX(e.x)
+  //       setY(e.y)
+  //     }
+  //     window.addEventListener('mousemove', update)
+  //     window.addEventListener('touchmove', update)
+  //     return () => {
+  //       window.removeEventListener('mousemove', update)
+  //       window.removeEventListener('touchmove', update)
+  //     }
+  //   },
+  //   [setX, setY]
+  // )
+
+
   return (
     <div className='boardarea'>
-      <div className='marker'>
+      {/* <div className='marker'>
         <img src={ctx.player === "one" ? markerred : markeryellow} alt="redmarker" ></img>
-      </div>
+      </div> */}
       <div className='board'>
         <img src={boardb} alt='blackboard' className='blackboard'></img>
         <Logic />

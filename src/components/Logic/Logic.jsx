@@ -21,7 +21,7 @@ const Logic = () => {
   }
 
   return (
-    <>
+    <> 
       <div className="logic">
         <div className="column one">{boards[0].map((num) => creator(num))}</div>
         <div className="column two">{boards[1].map((num) => creator(num))}</div>

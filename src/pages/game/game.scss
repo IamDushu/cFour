@@ -1,57 +1,135 @@
 @import "../../scss/variables";
+@import "../../scss/mixins";
 
-.game{
-    background-color: $purple;
-    height: 100vh;
-    overflow: hidden;
-    header{
-        display: flex;
-        justify-content: center;
-        .header{
+@include for-screen{
+    .game{
+        background-color: $purple;
+        height: 100vh;
+        overflow: hidden;
+        header{
             display: flex;
-            align-items: center;
-            padding: 10px 0px 10px 0px;
-            width: 500px;
-            justify-content: space-between;
-            margin-left: 30px;
-            img{
-                width: 40px;
-            }
-            .btn{
-                background-color: $darkPurple;
-                color: $white;
-                font-size: 18px;
-                padding: 5px 15px;
-                border-radius: 50px;
-                margin-left: -20px;
-                &:hover{
-                    cursor: pointer;
+            justify-content: center;
+            .header{
+                display: flex;
+                align-items: center;
+                padding: 10px 0px 10px 0px;
+                width: 500px;
+                justify-content: space-between;
+                margin-left: 30px;
+                img{
+                    width: 40px;
+                }
+                .btn{
+                    background-color: $darkPurple;
+                    color: $white;
+                    font-size: 18px;
+                    padding: 5px 15px;
+                    border-radius: 50px;
+                    margin-left: -20px;
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
             }
         }
+    
+        
+        .gamearea{
+            display: flex;
+            // border: 1px solid red;
+            justify-content: space-between;
+        }
+    
+        .mobilegame{
+            display: none;
+        }
+    
+        .foot{
+            background-color: $darkPurple;
+            height: 200px;
+            width: 100vw;
+            bottom: -12%;
+            border-radius: 70px 70px 0px 0px ;
+            position: fixed;
+            &.one{
+                background-color: $red;
+            }
+            &.two{
+                background-color: $yellow;
+            }
+        }
+
     }
 
     
-    .gamearea{
-        display: flex;
-        // border: 1px solid red;
-        justify-content: space-between;
-    }
-
-    .foot{
-        background-color: $darkPurple;
-        height: 200px;
-        width: 100vw;
-        bottom: -12%;
-        border-radius: 70px 70px 0px 0px ;
-        position: fixed;
-        &.one{
-            background-color: $red;
-        }
-        &.two{
-            background-color: $yellow;
-        }
-    }
-
 }
+
+@include for-phone{
+    .game{
+        background-color: $purple;
+        height: 100vh;
+        overflow: hidden;
+        header{
+            display: flex;
+            justify-content: center;
+            .header{
+                display: flex;
+                align-items: center;
+                padding: 40px 0px 10px 0px;
+                width: 500px;
+                justify-content: space-around;
+                margin-left: 30px;
+                img{
+                    width: 40px;
+                }
+                .btn{
+                    background-color: $darkPurple;
+                    color: $white;
+                    font-size: 20px;
+                    padding: 5px 15px;
+                    border-radius: 50px;
+                    margin-left: -20px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    
+        
+        .gamearea{
+            display: none;
+        }
+    
+        .mobilegame{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .scorearea{
+                width: 100vw;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    
+        .foot{
+            background-color: $darkPurple;
+            height: 45svh;
+            width: 100vw;
+            bottom: -12%;
+            border-radius: 70px 70px 0px 0px ;
+            position: fixed;
+            &.one{
+                background-color: $red;
+            }
+            &.two{
+                background-color: $yellow;
+            }
+        }
+
+    }
+}
+
+
 

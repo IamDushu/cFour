@@ -1,31 +1,60 @@
+@import "../../scss/mixins";
 
-.boardarea{
-    // border: 1px solid red;
-    position: relative;
-
-    .marker{
+@include for-screen{
+    .boardarea{
+        // border: 1px solid red;
         position: relative;
-        height: 32px;
-            img{
-                position: absolute;
-                left: 5%;
-                width: 30px;
+    
+    
+        .marker{
+            // position: relative;
+            height: 32px;
+            width: 480px;
+            overflow: hidden;
+            scrollbar-width: none;
+                img{
+                    width: 30px;
+                }
+        }
+    
+        .board{
+            display: flex;
+            position: relative;
+            z-index: 1;
+            margin-top: 32px;
+            .blackboard{
+                width: 480px;
             }
-    }
+            .whiteboard{
+                width: 480px;
+                position: absolute;
+                left: 0;
+                z-index: 3;
+            }
+        }
+    } 
+}
 
-    .board{
+@include for-phone{
+    .boardarea{
         position: relative;
-        z-index: 1;
-        .blackboard{
-            width: 480px;
-        }
-        .whiteboard{
-            width: 480px;
-            position: absolute;
-            left: 0;
-            z-index: 3;
-        }
-    }
+        width: 90vw;
 
-
+        .board{
+            width: fit-content;
+            display: flex;
+            position: relative;
+            z-index: 1;
+            margin-top: 32px;
+            .blackboard{
+                width: 90vw;
+            }
+            .whiteboard{
+                width: 90vw;
+                position: absolute;
+                left: 0;
+                z-index: 3;
+            }
+        }
+    } 
 }

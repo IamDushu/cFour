@@ -7,14 +7,19 @@ import playerTwo from "../../assets/images/player-two.svg"
 const Score = (props) => {
 
   let player = ""
+  let style=""
 
   if(props.num === "1"){
      player = playerOne
-  } else  player = playerTwo
+     style = "score playerOne"
+  } else{
+    player = playerTwo
+    style = "score playerTwo"
+  } 
 
   return (
-    <div className='score'>
-      <img src={player} alt="player"></img>
+    <div className={style}>
+      <img src={player} alt="player" className={player}></img>
       <p>PLAYER {props.num}</p>
       <h1>{props.score}</h1>
     </div>

@@ -1,28 +1,65 @@
 @import "../../scss/variables";
+@import "../../scss/mixins";
 
-.timer{
-    position: absolute;
-    left: 50%;
-    bottom: -18% ;
-    transform: translate(-50%);
-    z-index: 9;
-    text-align: center;
-    color: white;
-    &.yellow{
-        color: black;
-    }
-    img{
-        width: 150px;
-    }
-    .info{
-        width: 150px;
+@include for-screen{
+    .timer{
         position: absolute;
-        z-index: 10;
-        bottom: 20%;
         left: 50%;
+        bottom: -18% ;
         transform: translate(-50%);
-        font-weight: bold;
-        
+        z-index: 9;
+        text-align: center;
+        color: white;
+        &.yellow{
+            color: black;
+        }
+        img{
+            width: 150px;
+        }
+        .info{
+            width: 150px;
+            position: absolute;
+            z-index: 10;
+            bottom: 20%;
+            left: 50%;
+            transform: translate(-50%);
+            font-weight: bold;
+            
+        }
     }
 }
+
+@include for-phone{
+    .timer{
+        position: absolute;
+        left: 50%;
+        bottom: -47% ;
+        transform: translate(-50%);
+        z-index: 9;
+        text-align: center;
+        color: white;
+        &.yellow{
+            color: black;
+        }
+        img{
+            width: 55vw;
+        }
+        .info{
+            width: 180px;
+            position: absolute;
+            z-index: 10;
+            bottom: 25%;
+            left: 50%;
+            transform: translate(-50%);
+            font-weight: bold;
+            p{
+                font-size: 19px;
+            }
+            h1{
+                font-size: 50px;
+            }
+        }
+    }
+}
+
 

@@ -1,33 +1,40 @@
 // !=========================================================
 // !                    MIXINS
 // !=========================================================
-@mixin media-xsm {
-    @media screen and (min-width: 0px) {
+@mixin for-phone {
+    @media screen and (max-device-width: 480px) {
       @content;
     }
-  }
+}
+
+@mixin for-screen {
+    @media screen and (min-device-width: 768px) {
+      @content;
+    }
+}
   
-  @mixin media-sm {
-    @media screen and (min-width: 576px) {
-      @content;
-    }
-  }
   
-  @mixin media-md {
-    @media screen and (min-width: 768px) {
-      @content;
-    }
-  }
+// @mixin media-sm {
+  //   @media screen and (min-width: 576px) {
+  //     @content;
+  //   }
+  // }
+  
+  // @mixin media-md {
+  //   @media screen and (min-width: 768px) {
+  //     @content;
+  //   }
+  // }
   
 
-  @mixin media-lg {
-    @media screen and (min-width: 1024px) {
-      @content;
-    }
-  }
+  // @mixin media-lg {
+  //   @media screen and (min-width: 1024px) {
+  //     @content;
+  //   }
+  // }
   
-  @mixin media-xl {
-    @media screen and (min-width: 1600px) {
-      @content;
-    }
-  }
+  // @mixin media-xl {
+  //   @media screen and (min-width: 1600px) {
+  //     @content;
+  //   }
+  // }

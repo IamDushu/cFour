@@ -1,35 +1,75 @@
 @import "../../scss/variables";
+@import "../../scss/mixins";
 
-
-.win{
-    position: absolute;
-    left: 50%;
-    bottom: -17% ;
-    transform: translate(-50%);
-    width: 200px;
-    border-radius: 20px;
-    z-index: 9;
-    text-align: center;
-    border: 2px solid black;
-    border-bottom: 8px solid black;
-    color: black;
-    background-color: white;
-    padding: 5px;
-    p{
-        font-weight: bold;
-    }
-    h1{
-        font-size: 45px;
-    }
-    div{
-        background-color: $purple;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        color: white;
-        padding: 5px 10px;
+@include for-screen{
+    .win{
+        position: absolute;
+        left: 50%;
+        bottom: -17% ;
+        transform: translate(-50%);
+        width: 200px;
         border-radius: 20px;
-        font-size: 12px;
-        cursor: pointer;
+        z-index: 9;
+        text-align: center;
+        border: 2px solid black;
+        border-bottom: 8px solid black;
+        color: black;
+        background-color: white;
+        padding: 5px;
+        p{
+            font-weight: bold;
+        }
+        h1{
+            font-size: 45px;
+        }
+        div{
+            background-color: $purple;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    }
+}
+
+@include for-phone{
+    .win{
+        position: absolute;
+        left: 50%;
+        bottom: -52% ;
+        transform: translate(-50%);
+        width: 80vw;
+        height: 22vh;
+        border-radius: 30px;
+        z-index: 9;
+        text-align: center;
+        border: 4px solid black;
+        border-bottom: 16px solid black;
+        color: black;
+        background-color: white;
+        padding: 10px;
+        height: fit-content;
+        p{
+            font-weight: bold;
+            font-size: 25px;
+        }
+        h1{
+            font-size: 60px;
+        }
+        div{
+            background-color: $purple;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 25px;
+            cursor: pointer;
+        }
     }
 }
