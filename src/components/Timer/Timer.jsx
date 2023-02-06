@@ -12,7 +12,7 @@ const Timer = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if(ctx.seconds != 0){
+      if(ctx.seconds !== 0){
         ctx.setSeconds(ctx.seconds - 1);
       }
     }, 1000);
@@ -27,7 +27,7 @@ const Timer = () => {
       }
     }
     return () => clearInterval(interval);
-  }, [ctx.seconds]);
+  }, [ctx.seconds, ctx, player]);
 
   return (
     <div className={player === "one" ? "timer" : "timer yellow"}>

@@ -32,6 +32,9 @@ const Home = () => {
           </div>
           <div className="options">
             <div className="gameoption cpu">
+              <div className="ribbon">
+                <p>Coming Soon</p>
+              </div>
               <h3>PLAY VS CPU</h3>
               <img src={playervscpu} alt="playervscpu"></img>
             </div>
