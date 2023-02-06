@@ -115,11 +115,9 @@
     
         .foot{
             background-color: $darkPurple;
-            height: 45svh;
+            height: 35%;
             width: 100vw;
-            bottom: -12%;
             border-radius: 70px 70px 0px 0px ;
-            position: fixed;
             &.one{
                 background-color: $red;
             }
